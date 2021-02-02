@@ -9,7 +9,7 @@ describe("Deck", function () {
   });
 
   it("should be an instance of Deck", function () {
-    const deck = new deck();
+    const deck = new Deck();
     expect(deck).to.be.instanceof(Deck);
   });
 
@@ -36,10 +36,10 @@ describe("Deck", function () {
     const deck = new Deck([card1, card2, card3]);
 
     expect(deck.cards[0]).to.deep.equal(card1);
-    expect(deck.cards.length).to.equal(2);
+    expect(deck.cards.length).to.equal(3);
   });
 
-  it("should know how many cards are in the deck", function () {
+  it("should count how many cards are in the deck", function () {
     const card1 = new Card(
       1,
       "What allows you to define a set of related information using key-value pairs?",
@@ -63,6 +63,6 @@ describe("Deck", function () {
 
     const numCards = deck.countCards();
 
-    expect(numCards).to.equal(2);
+    expect(numCards).to.equal(3);
   });
 });
