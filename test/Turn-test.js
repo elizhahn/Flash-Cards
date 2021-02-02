@@ -5,8 +5,7 @@ const Turn = require("../src/Turn");
 
 describe("Turn", function () {
   it("should be a function", function () {
-    const turn = new Turn();
-    expect(turn).to.be.a("function");
+    expect(Turn).to.be.a("function");
   });
 
   it("should be an instance of Turn", function () {
@@ -76,8 +75,11 @@ describe("Turn", function () {
     const turn1 = new Turn("object", card1);
     const turn2 = new Turn("function", card2);
 
-    const feedback1 = turn1.giveFeedBack();
-    const feedback2 = turn2.giveFeedBack();
+    turn1.evaluateGuess();
+    turn2.evaluateGuess();
+
+    const feedback1 = turn1.giveFeedback();
+    const feedback2 = turn2.giveFeedback();
 
     expect(feedback1).to.equal("correct!");
     expect(feedback2).to.equal("incorrect!");
