@@ -17,6 +17,8 @@ describe("Turn", function () {
   it("should return a user's guess", function () {
     const turn = new Turn("object");
     const userGuess = turn.returnGuess();
+
+    expect(turn.guess).to.equal("object");
     expect(userGuess).to.equal("object");
   });
 
@@ -29,6 +31,8 @@ describe("Turn", function () {
     );
     const turn = new Turn("object", card);
     const currentCard = turn.returnCard();
+
+    expect(turn.card).to.equal(card);
     expect(currentCard).to.be.an.instanceof(Card);
     expect(currentCard).to.deep.equal(card);
   });
