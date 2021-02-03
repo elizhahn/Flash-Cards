@@ -52,11 +52,11 @@ describe("Turn", function () {
     const turn1 = new Turn("object", card1);
     const turn2 = new Turn("object", card2);
 
-    turn1.evaluateGuess();
-    turn2.evaluateGuess();
+    const guess1 = turn1.evaluateGuess();
+    const guess2 = turn2.evaluateGuess();
 
-    expect(turn1.isCorrect).to.equal(true);
-    expect(turn2.isCorrect).to.equal(false);
+    expect(guess1).to.equal(true);
+    expect(guess2).to.equal(false);
   });
 
   it("should provide feedback based on the guess", function () {
