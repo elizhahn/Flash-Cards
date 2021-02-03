@@ -169,4 +169,39 @@ describe("Round", function () {
 
     expect(percentCorrect).to.equal(50);
   });
+
+  it("should let the user know the round is over", function () {
+    const card1 = new Card(
+      1,
+      "What allows you to define a set of related information using key-value pairs?",
+      ["object", "array", "function"],
+      "object"
+    );
+    const card2 = new Card(
+      2,
+      "What is a comma-separated list of related values?",
+      ["array", "object", "function"],
+      "array"
+    );
+    const deck = new Deck([card1, card2]);
+    const round1 = new Round(deck);
+    const round2 = new Round(deck);
+
+    round1.takeTurn("object");
+    round1.takeTurn("function");
+    round1.calculatePercentCorrect();
+    const endMessage1 = round1.endRound();
+
+    round2.takeTurn("object");
+    round2.takeTurn("array");
+    round2.calculatePercentCorrect();
+    const endMessage2 = round2.endRound();
+
+    expect(endMessage1).to.equal(
+      "**Round over! You answered 50% of the questions correctly"
+    );
+    expect(endMessage2).to.equal(
+      "**Round over! You answered 100% of the questions correctly"
+    );
+  });
 });
