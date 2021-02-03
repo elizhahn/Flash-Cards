@@ -9,12 +9,17 @@ class Round {
   }
 
   returnCurrentCard() {
-    // const newIndex = this.deck.indexOf(this.currentCard) + 1;
     return this.currentCard;
   }
 
-  takeTurn() {
+  takeTurn(guess) {
     this.turnCount++;
+    const turn = new Turn(guess, this.currentCard);
+    const newIndex = this.deck.indexOf(this.currentCard) + 1;
+    this.currentCard = this.deck[newIndex];
+    if (!turn.evaluateGuess()) {
+      this.incorrectGuesses.push(turn.card.id);
+    }
   }
 }
 
