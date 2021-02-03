@@ -68,13 +68,13 @@ describe("Round", function () {
     const deck = new Deck([card1, card2]);
     const round = new Round(deck);
 
-    round.returnCurrentCard();
+    const currentCard = round.returnCurrentCard();
 
-    expect(round.currentCard.id).to.equal(2);
-    expect(round.currentCard).to.deep.equal(card2);
+    expect(currentCard.id).to.equal(1);
+    expect(currentCard).to.deep.equal(card1);
   });
 
-  it.skip("should update the turn count when user takes a turn", function () {
+  it("should update the turn count when user takes a turn", function () {
     const card1 = new Card(
       1,
       "What allows you to define a set of related information using key-value pairs?",
@@ -95,7 +95,7 @@ describe("Round", function () {
     expect(round.turnCount).to.equal(1);
   });
 
-  it.skip("should update the current card when a user takes a turn", function () {
+  it("should update the current card when a user takes a turn", function () {
     const card1 = new Card(
       1,
       "What allows you to define a set of related information using key-value pairs?",
