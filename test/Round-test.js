@@ -29,7 +29,7 @@ describe("Round", function () {
     expect(round).to.be.instanceof(Round);
   });
 
-  it("should store the current card, incorrect guesses, and turn count", function () {
+  it("should store the deck, current card, incorrect guesses, and turn count", function () {
     const card1 = new Card(
       1,
       "What allows you to define a set of related information using key-value pairs?",
@@ -45,13 +45,14 @@ describe("Round", function () {
     const deck = new Deck([card1, card2]);
     const round = new Round(deck);
 
+    expect(round.deck).to.deep.equal(deck.cards);
     expect(round.currentCard).to.deep.equal(card1);
     expect(round.currentCard.id).to.equal(1);
     expect(round.turnCount).to.equal(0);
     expect(round.incorrectGuesses).to.deep.equal([]);
   });
 
-  it.skip("should return the currentCard in play", function () {
+  it("should return the currentCard in play", function () {
     const card1 = new Card(
       1,
       "What allows you to define a set of related information using key-value pairs?",
