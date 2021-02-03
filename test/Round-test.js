@@ -96,7 +96,6 @@ describe("Round", function () {
     const deck = new Deck([card1, card2]);
     const round = new Round(deck);
 
-    round.returnCurrentCard();
     round.takeTurn();
 
     expect(round.currentCard.id).to.equal(2);
@@ -146,5 +145,28 @@ describe("Round", function () {
 
     expect(feedback1).to.equal("correct!");
     expect(feedback2).to.equal("incorrect!");
+  });
+
+  it.skip("should calculate the percentage of correct guesses", function () {
+    const card1 = new Card(
+      1,
+      "What allows you to define a set of related information using key-value pairs?",
+      ["object", "array", "function"],
+      "object"
+    );
+    const card2 = new Card(
+      2,
+      "What is a comma-separated list of related values?",
+      ["array", "object", "function"],
+      "array"
+    );
+    const deck = new Deck([card1, card2]);
+    const round = new Round(deck);
+
+    round.takeTurn("object");
+    round.takeTurn("function");
+    const percentCorrect = round.calculatePercentCorrect();
+
+    expect(percentCorrect).to.equal(50);
   });
 });
