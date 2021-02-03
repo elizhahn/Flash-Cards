@@ -117,7 +117,7 @@ describe("Round", function () {
     expect(round.currentCard).to.deep.equal(card2);
   });
 
-  it.skip("should evaluate the user's guess and store incorrect answer id", function () {
+  it("should evaluate the user's guess and store incorrect answer id", function () {
     const card1 = new Card(
       1,
       "What allows you to define a set of related information using key-value pairs?",
