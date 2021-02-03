@@ -24,8 +24,9 @@ class Round {
   }
 
   calculatePercentCorrect() {
-    const percentCorrect =
-      (1 - this.incorrectGuesses.length / this.deck.length) * 100;
+    const percentCorrect = Math.trunc(
+      (1 - this.incorrectGuesses.length / this.deck.length) * 100
+    );
     this.percentCorrect = percentCorrect;
     return percentCorrect;
   }
