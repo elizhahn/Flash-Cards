@@ -6,6 +6,7 @@ class Round {
     this.currentCard = deck.cards[0];
     this.turnCount = 0;
     this.incorrectGuesses = [];
+    this.percentCorrect = 0;
   }
 
   returnCurrentCard() {
@@ -25,8 +26,13 @@ class Round {
 
   calculatePercentCorrect() {
     const percentCorrect =
-      (this.incorrectGuesses.length / this.deck.length) * 100;
+      (1 - this.incorrectGuesses.length / this.deck.length) * 100;
+    this.percentCorrect = percentCorrect;
     return percentCorrect;
+  }
+
+  endRound() {
+    return `**Round over!** You answered ${this.percentCorrect}% of the questions correctly`;
   }
 }
 

@@ -185,7 +185,7 @@ describe("Round", function () {
     expect(percentCorrect).to.equal(50);
   });
 
-  it.skip("should let the user know the round is over", function () {
+  it("should let the user know the round is over", function () {
     const card1 = new Card(
       1,
       "What allows you to define a set of related information using key-value pairs?",
@@ -213,10 +213,10 @@ describe("Round", function () {
     const endMessage2 = round2.endRound();
 
     expect(endMessage1).to.equal(
-      "**Round over! You answered 50% of the questions correctly"
+      "**Round over!** You answered 50% of the questions correctly"
     );
     expect(endMessage2).to.equal(
-      "**Round over! You answered 100% of the questions correctly"
+      "**Round over!** You answered 100% of the questions correctly"
     );
   });
 });
