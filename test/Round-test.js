@@ -162,7 +162,7 @@ describe("Round", function () {
     expect(feedback2).to.equal("incorrect!");
   });
 
-  it.skip("should calculate the percentage of correct guesses", function () {
+  it("should calculate the percentage of correct guesses", function () {
     const card1 = new Card(
       1,
       "What allows you to define a set of related information using key-value pairs?",

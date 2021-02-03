@@ -22,6 +22,12 @@ class Round {
     }
     return turn.giveFeedback();
   }
+
+  calculatePercentCorrect() {
+    const percentCorrect =
+      (this.incorrectGuesses.length / this.deck.length) * 100;
+    return percentCorrect;
+  }
 }
 
 module.exports = Round;
