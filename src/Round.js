@@ -9,8 +9,12 @@ class Round {
   }
 
   returnCurrentCard() {
-    const newIndex = this.deck.indexOf(this.currentCard) + 1;
-    this.currentCard = this.deck[newIndex];
+    // const newIndex = this.deck.indexOf(this.currentCard) + 1;
+    return this.currentCard;
+  }
+
+  takeTurn() {
+    this.turnCount++;
   }
 }
 
