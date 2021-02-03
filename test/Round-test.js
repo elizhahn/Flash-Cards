@@ -204,12 +204,10 @@ describe("Round", function () {
 
     round1.takeTurn("object");
     round1.takeTurn("function");
-    round1.calculatePercentCorrect();
     const endMessage1 = round1.endRound();
 
     round2.takeTurn("object");
     round2.takeTurn("array");
-    round2.calculatePercentCorrect();
     const endMessage2 = round2.endRound();
 
     expect(endMessage1).to.equal(
