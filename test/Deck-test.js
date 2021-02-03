@@ -3,7 +3,7 @@ const expect = chai.expect;
 const Card = require("../src/Card.js");
 const Deck = require("../src/Deck.js");
 
-describe.only("Deck", function () {
+describe("Deck", function () {
   let deck;
   let card1;
   let card2;
