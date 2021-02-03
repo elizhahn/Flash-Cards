@@ -59,4 +59,24 @@ describe("Round", function () {
     expect(round.currentCard).to.deep.equal(card2);
   });
 
-}):
+  it.skip("should update the turn count when user takes a turn", function () {
+    const card1 = new Card(
+      1,
+      "What allows you to define a set of related information using key-value pairs?",
+      ["object", "array", "function"],
+      "object"
+    );
+    const card2 = new Card(
+      2,
+      "What is a comma-separated list of related values?",
+      ["array", "object", "function"],
+      "array"
+    );
+    const deck = new Deck([card1, card2]);
+    const round = new Round(deck);
+
+    round.takeTurn();
+
+    expect(round.turnCount).to.equal(1);
+  });
+});
