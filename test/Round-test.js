@@ -139,7 +139,7 @@ describe("Round", function () {
     expect(round.incorrectGuesses[0]).to.equal(2);
   });
 
-  it.skip("should give feedback for each user guess", function () {
+  it("should give feedback for each user guess", function () {
     const card1 = new Card(
       1,
       "What allows you to define a set of related information using key-value pairs?",
