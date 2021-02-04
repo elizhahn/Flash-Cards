@@ -3,7 +3,7 @@
 
 ## Abstract 
 
-Flash-Cards is a Turing School of Software and Design Mod 2 project which included finishing a flash cards program that will prompt a user with questions in the terminal and allow them to answer. Using a basic structure of class files, tests suites were written and then classes were built out to create the desired functionality. 
+Flash-Cards is a Turing School of Software and Design Mod 2 project which included contributing code to an partially constructed object-oriented application. The Flash Cards program will prompt a user with questions in the terminal and allow them to answer. Using a basic structure of class files, tests suites were written and then classes were built out to create the desired functionality. 
 
 ## Take a look
 
