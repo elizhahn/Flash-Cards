@@ -4,7 +4,7 @@ const Card = require("../src/Card.js");
 const Deck = require("../src/Deck.js");
 const Round = require("../src/Round.js");
 
-describe("Round", function () {
+describe.only("Round", function () {
   let card1;
   let card2;
   let deck;
@@ -82,5 +82,13 @@ describe("Round", function () {
     const percentCorrect = round.calculatePercentCorrect();
 
     expect(percentCorrect).to.equal(50);
+  });
+
+  it("should reset the incorrect guess properties", function () {
+    round.takeTurn("object");
+    round.takeTurn("function");
+    round.reviewCardsAgain();
+
+    expect(round.incorrectGuesses).to.deep.equal([]);
   });
 });
