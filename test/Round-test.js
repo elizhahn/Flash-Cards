@@ -4,7 +4,7 @@ const Card = require("../src/Card.js");
 const Deck = require("../src/Deck.js");
 const Round = require("../src/Round.js");
 
-describe.only("Round", function () {
+describe("Round", function () {
   let card1;
   let card2;
   let deck;
@@ -82,37 +82,5 @@ describe.only("Round", function () {
     const percentCorrect = round.calculatePercentCorrect();
 
     expect(percentCorrect).to.equal(50);
-  });
-
-  it("should reset the incorrect guess properties", function () {
-    round.takeTurn("object");
-    round.takeTurn("function");
-    round.reviewCardsAgain();
-
-    expect(round.incorrectGuesses).to.deep.equal([]);
-  });
-
-  it("should reset the deck with only incorrect cards", function () {
-    round.takeTurn("object");
-    round.takeTurn("function");
-    round.reviewCardsAgain();
-
-    expect(round.deck.length).to.equal(1);
-  });
-
-  it("should reload incorrect guesses back into the deck", function () {
-    round.takeTurn("object");
-    round.takeTurn("function");
-    round.reviewCardsAgain();
-
-    expect(round.deck[0]).to.be.instanceof(Card);
-  });
-
-  it("should reset the current card", function () {
-    round.takeTurn("object");
-    round.takeTurn("function");
-    round.reviewCardsAgain();
-
-    expect(round.currentCard).to.be.instanceof(Card);
   });
 });
