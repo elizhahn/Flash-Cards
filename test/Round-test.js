@@ -4,7 +4,7 @@ const Card = require("../src/Card.js");
 const Deck = require("../src/Deck.js");
 const Round = require("../src/Round.js");
 
-describe.only("Round", function () {
+describe("Round", function () {
   let card1;
   let card2;
   let deck;
