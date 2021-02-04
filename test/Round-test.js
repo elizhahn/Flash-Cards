@@ -107,4 +107,12 @@ describe.only("Round", function () {
 
     expect(round.deck[0]).to.be.instanceof(Card);
   });
+
+  it("should reset the current card", function () {
+    round.takeTurn("object");
+    round.takeTurn("function");
+    round.reviewCardsAgain();
+
+    expect(round.currentCard).to.be.instanceof(Card);
+  });
 });
