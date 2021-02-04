@@ -33,7 +33,7 @@ describe("Round", function () {
     expect(round).to.be.instanceof(Round);
   });
 
-  it("should store the deck, current card, incorrect guesses, and turn count", function () {
+  it("should store a deck, current card, incorrect guesses, and turn count", function () {
     expect(round.deck).to.deep.equal(deck.cards);
     expect(round.currentCard).to.deep.equal(card1);
     expect(round.currentCard.id).to.equal(1);
@@ -61,7 +61,7 @@ describe("Round", function () {
     expect(round.currentCard).to.deep.equal(card2);
   });
 
-  it("should evaluate the user's guess and store incorrect answer id", function () {
+  it("should evaluate answers and store incorrect answer ids", function () {
     round.takeTurn("object");
     round.takeTurn("function");
 
