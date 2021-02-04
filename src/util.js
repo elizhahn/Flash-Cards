@@ -36,18 +36,6 @@ async function main(round) {
     confirmUpdate(getAnswer.answers, round)
   );
 
-  //if(!round.returnCurrentCard() && round.incorrectGuesses.length === 0) {
-  //  round.endRound();
-  //   would need to print a new message in endRound here that is appropriate
-  //} else if(!round.returnCurrentCard() && round.incorrectGuesses.lenght > 0){
-  //   round.reviewCardsAgain()
-  //   create a method here that would load the incorrect cards by id
-  //  into the deck and print a message to user using calculate PercentCorrect
-  // the round should keep cycling if the deck is refilled here
-  //}
-  //
-  //
-
   if (!round.returnCurrentCard() && round.incorrectGuesses.length === 0) {
     round.endRound();
   } else if (!round.returnCurrentCard() && round.incorrectGuesses.length > 0) {
