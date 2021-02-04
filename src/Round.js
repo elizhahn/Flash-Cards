@@ -36,7 +36,7 @@ class Round {
 
   reviewCardsAgain() {
     console.log(
-      "Let's review the ones you missed! \n-----------------------------------------------------------------------------------"
+      "Let's review the ones you missed! \n--------------------------------------------------------------------"
     );
     this.deck = [];
     for (const id of this.incorrectGuesses) {
