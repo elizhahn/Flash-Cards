@@ -91,4 +91,12 @@ describe.only("Round", function () {
 
     expect(round.incorrectGuesses).to.deep.equal([]);
   });
+
+  it("should reset the deck with only incorrect cards", function () {
+    round.takeTurn("object");
+    round.takeTurn("function");
+    round.reviewCardsAgain();
+
+    expect(round.deck.length).to.equal(1);
+  });
 });
