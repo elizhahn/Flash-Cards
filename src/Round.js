@@ -1,4 +1,7 @@
+const data = require("./data");
+const prototypeQuestions = data.prototypeData;
 const Turn = require("./Turn.js");
+const Card = require("./Card.js");
 
 class Round {
   constructor(deck) {
@@ -29,6 +32,24 @@ class Round {
     );
     this.percentCorrect = percentCorrect;
     return percentCorrect;
+  }
+
+  reviewCardsAgain() {
+    console.log(
+      "Let's review the ones you missed! \n-----------------------------------------------------------------------------------"
+    );
+    this.deck = [];
+    for (const id of this.incorrectGuesses) {
+      for (const card of prototypeQuestions) {
+        if (id === card.id) {
+          this.deck.push(
+            new Card(card.id, card.question, card.answers, card.correctAnswer)
+          );
+        }
+      }
+    }
+    this.incorrectGuesses = [];
+    this.currentCard = this.deck[0];
   }
 
   endRound() {
