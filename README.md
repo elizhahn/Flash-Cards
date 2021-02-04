@@ -18,7 +18,8 @@ Flash-Cards is a Turing School of Software and Design Mod 2 project which includ
 
 Node server running on port 3000
 Welcome to FlashCards! You are playing with 30 cards.
------------------------------------------------------------------------
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 
 - The first card question should also appear with possible answers
 - The user can now select a number and press enter to submit an answer:
