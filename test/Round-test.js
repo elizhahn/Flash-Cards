@@ -99,4 +99,12 @@ describe.only("Round", function () {
 
     expect(round.deck.length).to.equal(1);
   });
+
+  it("should reload incorrect guesses back into the deck", function () {
+    round.takeTurn("object");
+    round.takeTurn("function");
+    round.reviewCardsAgain();
+
+    expect(round.deck[0]).to.be.instanceof(Card);
+  });
 });
