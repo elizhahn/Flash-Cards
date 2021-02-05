@@ -41,3 +41,15 @@ Flash-Cards is a Turing School of Software and Design Mod 2 project which includ
 >  3) function
 >  Answer:
 
+- When all the cards have been quizzed, the program will prompt the user to answer incorrect guesses again for extra practice
+
+> Let's review the ones you missed! 
+>
+>  ? What type of prototype method does not modify the existing array but returns a particular represent
+>  ation of the array? 
+>    1) mutator method
+>    2) accessor method
+>    3) iteration method
+>    Answer: 
+
+- The round will end when the user has gotten 100% of the questions correct
